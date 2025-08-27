@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cápsula do Tempo de Conexões Especiais</title>
+    <style>
+        :root {
+            --primary-color: #6d5d6e;
+            --secondary-color: #4f4557;
+            --accent-color: #f4eee0;
+            --text-color: #393646;
+            --light-bg: #f8f6f2;
+            --success-color: #4caf50;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(109, 93, 110, 0.2);
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .checkbox-group, .radio-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-item, .radio-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .checkbox-item input, .radio-item input {
+            margin-right: 8px;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+        
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .button-copy {
+            background-color: var(--success-color);
+            display: none;
+        }
+        
+        .button-copy:hover {
+            background-color: #3d8b40;
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-section-title {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .optional {
+            font-weight: normal;
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        .output-container {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--accent-color);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .output-text {
+            white-space: pre-wrap;
+            font-family: monospace;
+            line-height: 1.5;
+        }
+        
+        .copy-message {
+            display: none;
+            text-align: center;
+            color: var(--success-color);
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .checkbox-group, .radio-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💫 Cápsula do Tempo de Conexões Especiais</h1>
+        
+        <p class="intro">Preencha os detalhes abaixo para criar uma memória eterna desse momento especial. Quanto mais detalhes, mais rica será a história!</p>
+        
+        <form id="memoryForm">
+            <div class="form-section">
+                <h2 class="form-section-title">Informações Básicas</h2>
+                
+                <div class="form-group">
+                    <label for="personName">Nome da Pessoa:</label>
+                    <input type="text" id="personName" name="personName" required placeholder="Ex: Ana, Sofia, Carla">
+                </div>
+                
+                <div class="form-group">
+                    <label for="memoryDate">Data do Encontro:</label>
+                    <input type="date" id="memoryDate" name="memoryDate">
+                </div>
+                
+                <div class="form-group">
+                    <label>Período do Dia:</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="manha" name="periodo" value="manhã">
+                            <label for="manha">Manhã</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="tarde" name="periodo" value="tarde">
+                            <label for="tarde">Tarde</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="noite" name="periodo" value="noite">
+                            <label for="noite">Noite</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="madrugada" name="periodo" value="madrugada">
+                            <label for="madrugada">Madrugada</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2 class="form-section-title">Contexto do Encontro</h2>
+                
+                <div class="form-group">
+                    <label>Onde aconteceu?</label>
+                    <select id="locationType" name="locationType">
+                        <option value="">Selecione uma opção</option>
+                        <option value="restaurante">Restaurante</option>
+                        <option value="cafe">Café ou cafeteria</option>
+                        <option value="parque">Parque ou área externa</option>
+                        <option value="praia">Praia</option>
+                        <option value="cinema">Cinema</option>
+                        <option value="show">Show ou evento cultural</option>
+                        <option value="minha-casa">Minha casa</option>
+                        <option value="sua-casa">Casa dela(e)</option>
+                        <option value="festa">Festa ou comemoração</option>
+                        <option value="viagem">Viagem</option>
+                        <option value="outro">Outro local</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="encounterContext">Descreva o contexto do encontro:</label>
+                    <textarea id="encounterContext" name="encounterContext" required placeholder="Ex: primeiro encontro no parque, jantar em um restaurante italiano, aquela festa de ano novo, uma viagem espontânea pra praia"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Ambiente (selecione todas que se aplicam):</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ambiente-interno" name="ambiente" value="interno">
+                            <label for="ambiente-interno">Interno</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ambiente-externo" name="ambiente" value="externo">
+                            <label for="ambiente-externo">Externo</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ambiente-formal" name="ambiente" value="formal">
+                            <label for="ambiente-formal">Formal</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ambiente-informal" name="ambiente" value="informal">
+                            <label for="ambiente-informal">Informal</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ambiente-intimo" name="ambiente" value="íntimo">
+                            <label for="ambiente-intimo">Íntimo</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ambiente-animado" name="ambiente" value="animado">
+                            <label for="ambiente-animado">Animado</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2 class="form-section-title">Detalhes Específicos</h2>
+                
+                <div class="form-group">
+                    <label for="specificDetails">Detalhes específicos que marcaram o momento:</label>
+                    <textarea id="specificDetails" name="specificDetails" required placeholder="Ex: o jeito que ela riu de algo bobo, a música que tocava no ambiente, o prato que dividiram, uma frase que ela disse, a cor do vestido dela, como a luz do entardecer iluminava o ambiente"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Condições do tempo:</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="ensolarado" name="clima" value="ensolarado">
+                            <label for="ensolarado">Ensolarado</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="nublado" name="clima" value="nublado">
+                            <label for="nublado">Nublado</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="ameno" name="clima" value="ameno">
+                            <label for="ameno">Ameno</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="crepusculo" name="clima" value="crepúsculo">
+                            <label for="crepusculo">Crepúsculo</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="estrelado" name="clima" value="estrelado">
+                            <label for="estrelado">Estrelado</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="chuvoso" name="clima" value="chuvoso">
+                            <label for="chuvoso">Chuvoso</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="frio" name="clima" value="frio">
+                            <label for="frio">Frio</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="vento" name="clima" value="ventando">
+                            <label for="vento">Ventando</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2 class="form-section-title">Sensações e Emoções</h2>
+                
+                <div class="form-group">
+                    <label>Sensação principal <span class="optional">(selecione até 3)</span>:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="euforia" name="sensacao" value="euforia">
+                            <label for="euforia">Euforia</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="paz" name="sensacao" value="paz">
+                            <label for="paz">Paz</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="conexao" name="sensacao" value="conexao">
+                            <label for="conexao">Conexão instantânea</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="nostalgia" name="sensacao" value="nostalgia">
+                            <label for="nostalgia">Nostalgia</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="alegria" name="sensacao" value="alegria">
+                            <label for="alegria">Alegria contagiante</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="paixao" name="sensacao" value="paixao">
+                            <label for="paixao">Paixão</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="confianca" name="sensacao" value="confianca">
+                            <label for="confianca">Confiança</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="admiração" name="sensacao" value="admiração">
+                            <label for="admiração">Admiração</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="additionalFeelings">Descreva com mais detalhes as emoções do momento <span class="optional">(opcional)</span>:</label>
+                    <textarea id="additionalFeelings" name="additionalFeelings" placeholder="Use este espaço para descrever com mais riqueza o que sentiu"></textarea>
+                </div>
+            </div>
+            
+            <button type="submit" id="btnCriar">Criar História Memorável</button>
+        </form>
+        
+        <div class="output-container" id="outputContainer">
+            <div class="output-text" id="outputText"></div>
+        </div>
+        
+        <button class="button-copy" id="btnCopiar">Copiar Texto</button>
+        <div class="copy-message" id="copyMessage">Texto copiado para a área de transferência!</div>
+    </div>
+
+    <script>
+        document.getElementById('memoryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Coletar dados do formulário
+            const personName = document.getElementById('personName').value;
+            const memoryDate = document.getElementById('memoryDate').value;
+            const encounterContext = document.getElementById('encounterContext').value;
+            const specificDetails = document.getElementById('specificDetails').value;
+            const additionalFeelings = document.getElementById('additionalFeelings').value;
+            
+            // Coletar período do dia
+            const periodoSelecionado = document.querySelector('input[name="periodo"]:checked');
+            const periodo = periodoSelecionado ? periodoSelecionado.value : '';
+            
+            // Coletar localização
+            const locationType = document.getElementById('locationType');
+            const local = locationType.value ? locationType.options[locationType.selectedIndex].text : '';
+            
+            // Coletar ambiente
+            const ambienteSelecionado = Array.from(document.querySelectorAll('input[name="ambiente"]:checked')).map(cb => cb.value);
+            
+            // Coletar clima
+            const climaSelecionado = document.querySelector('input[name="clima"]:checked');
+            const clima = climaSelecionado ? climaSelecionado.value : '';
+            
+            // Coletar sensações
+            const sensacaoSelecionada = Array.from(document.querySelectorAll('input[name="sensacao"]:checked')).map(cb => cb.value);
+            
+            // Formatar dados para o chatbot
+            let output = `Nome da Pessoa: ${personName}\n`;
+            output += `Contexto do Encontro: ${encounterContext}\n`;
+            
+            // Adicionar data se fornecida
+            if (memoryDate) {
+                const dataFormatada = new Date(memoryDate).toLocaleDateString('pt-BR');
+                output += `Data: ${dataFormatada}\n`;
+            }
+            
+            // Adicionar período do dia
+            if (periodo) {
+                output += `Período: ${periodo}\n`;
+            }
+            
+            // Adicionar tipo de localização
+            if (local) {
+                output += `Local: ${local}\n`;
+            }
+            
+            // Adicionar ambiente
+            if (ambienteSelecionado.length > 0) {
+                output += `Ambiente: ${ambienteSelecionado.join(', ')}\n`;
+            }
+            
+            // Adicionar condições climáticas
+            if (clima) {
+                output += `Clima: ${clima}\n`;
+            }
+            
+            output += `Detalhes Específicos: ${specificDetails}\n`;
+            
+            // Adicionar sensações
+            if (sensacaoSelecionada.length > 0) {
+                output += `Sensação Principal: ${sensacaoSelecionada.join(', ')}\n`;
+            }
+            
+            // Adicionar sentimentos adicionais
+            if (additionalFeelings) {
+                output += `Descrição Emocional: ${additionalFeelings}`;
+            }
+            
+            // Exibir resultado
+            document.getElementById('outputText').textContent = output;
+            document.getElementById('outputContainer').style.display = 'block';
+            document.getElementById('btnCopiar').style.display = 'block';
+            
+            // Rolar para o resultado
+            document.getElementById('outputContainer').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Função para copiar o texto
+        document.getElementById('btnCopiar').addEventListener('click', function() {
+            const outputText = document.getElementById('outputText').textContent;
+            
+            // Usar a API de clipboard para copiar o texto
+            navigator.clipboard.writeText(outputText).then(function() {
+                // Mostrar mensagem de sucesso
+                const copyMessage = document.getElementById('copyMessage');
+                copyMessage.style.display = 'block';
+                
+                // Esconder a mensagem após 3 segundos
+                setTimeout(function() {
+                    copyMessage.style.display = 'none';
+                }, 3000);
+            }).catch(function(err) {
+                console.error('Erro ao copiar texto: ', err);
+                alert('Não foi possível copiar o texto. Por favor, selecione e copie manualmente.');
+            });
+        });
+    </script>
+</body>
+</html>
