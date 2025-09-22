@@ -1,188 +1,175 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Chosen Palette: Tech Blue & Graphite -->
-    <!-- Application Structure Plan: A high-conversion B2B landing page targeting local businesses in Sergipe. The structure is a sales funnel: 1) Hero with a problem-solving headline and a clear CTA. 2) 'Para Quem' section to qualify the audience (MEIs, autônomos). 3) 'Nossas Soluções' showcasing tangible products (e.g., 'Livro Caixa Digital') to make the service concrete. 4) 'Como Funciona' section to build trust and demystify the process. 5) A unique selling proposition section highlighting the use of Gemini for fast development. 6) A final, strong CTA section for lead capture. This structure guides the user from awareness to conversion logically and efficiently. -->
-    <!-- Visualization & Content Choices: 
-        1. Report Info: Types of web apps (receipts, cash flow) -> Goal: Inform/Showcase -> Viz: Icon-driven feature cards -> Interaction: None, designed for clarity and quick understanding of the offerings. -> Justification: For a non-technical audience, clear, tangible examples of what can be built are far more effective than technical descriptions. -> Library/Method: HTML + Tailwind.
-        2. Report Info: Development Process -> Goal: Build Trust/Demystify -> Viz: Numbered step-by-step graphic list -> Interaction: None. -> Justification: A simple 3-step process makes the service seem accessible and straightforward, reducing friction for potential clients. -> Library/Method: HTML + Tailwind.
-        CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
-     -->
-    <title>JN2M3A DIGITAL | Aplicações Web para Negócios em Sergipe</title>
-    <meta name="description" content="Desenvolvimento de aplicações web sob medida em Aracaju e Sergipe. Soluções como livro caixa, recibos e orçamentos online para autônomos, MEIs e pequenas empresas.">
-    <meta name="keywords" content="desenvolvimento web Sergipe, aplicações web Aracaju, sistemas para autônomos, livro caixa online, orçamento digital, recibo online, soluções digitais para MEI, programador em Aracaju, JN2M3A DIGITAL">
-    <meta name="author" content="JN2M3A DIGITAL">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JN2M3A DIGITAL | Sistemas Web para Negócios em Sergipe</title>
+  <meta name="description" content="Criação de sistemas web personalizados em Sergipe. Tenha soluções online como caixa digital, orçamentos, recibos e gestão para pequenos negócios e MEIs.">
+  <meta name="keywords" content="sistemas web Sergipe, aplicativos online Aracaju, automação para pequenos negócios, recibo digital, orçamento online, software para MEI, gestão financeira online, JN2M3A Digital">
+  <meta name="author" content="JN2M3A DIGITAL">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>body{font-family:'Inter',sans-serif}</style>
 </head>
 <body class="bg-slate-900 text-slate-300">
 
-    <header class="bg-slate-900/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-lg shadow-black/20">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <img src="/assets/logo.png" alt="Logo redonda da JN2M3A DIGITAL" class="h-12 w-auto">
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="#solutions" class="text-slate-300 hover:text-blue-400 transition-colors font-medium">Soluções</a>
-                <a href="#howitworks" class="text-slate-300 hover:text-blue-400 transition-colors font-medium">Como Funciona</a>
-                <a href="#contact" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-700 transition-all shadow">Peça um Orçamento</a>
-            </nav>
-            <button id="mobile-menu-btn" class="md:hidden text-white">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+<header class="bg-slate-900/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-lg shadow-black/20">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <img src="/assets/logo.png" alt="Logo JN2M3A DIGITAL" class="h-12 w-auto">
+    <nav class="hidden md:flex items-center space-x-6">
+      <a href="#solutions" class="text-slate-300 hover:text-blue-400 font-medium">Serviços</a>
+      <a href="#howitworks" class="text-slate-300 hover:text-blue-400 font-medium">Etapas</a>
+      <a href="#contact" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-700 shadow">Peça um Orçamento</a>
+    </nav>
+    <button id="mobile-menu-btn" class="md:hidden text-white">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden">
+    <a href="#solutions" class="block py-3 px-6 hover:bg-slate-800">Serviços</a>
+    <a href="#howitworks" class="block py-3 px-6 hover:bg-slate-800">Etapas</a>
+    <a href="#contact" class="block py-3 px-6 hover:bg-slate-800">Peça um Orçamento</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="hero" class="pt-32 pb-20 relative bg-slate-800">
+    <div class="absolute inset-0 bg-grid-slate-700/40 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+    <div class="container mx-auto px-6 text-center relative z-10">
+      <img src="/assets/logo.png" alt="JN2M3A DIGITAL" class="h-20 mx-auto mb-6">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white">Traga seu Negócio para o Digital com <span class="text-blue-400">Soluções Web Personalizadas</span></h1>
+      <p class="mt-6 max-w-3xl mx-auto text-lg text-slate-400">Esqueça processos manuais. Desenvolvemos ferramentas online sob medida para simplificar e acelerar sua rotina.</p>
+      <div class="mt-10">
+        <a href="#contact" class="bg-blue-600 text-white font-bold py-4 px-10 rounded-lg hover:bg-blue-700 shadow-lg text-xl">Quero Modernizar Meu Negócio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PÚBLICO -->
+  <section id="for-whom" class="py-20">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white">Tecnologia ao Alcance do Empreendedor Sergipano</h2>
+      <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">Criamos soluções que ajudam desde profissionais independentes até microempresas a se organizarem melhor.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 shadow-lg">
+          <i data-lucide="user" class="w-12 h-12 text-blue-400 mx-auto mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Autônomos e Profissionais</h3>
+          <p>Envie propostas e recibos em poucos cliques, direto do celular.</p>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#solutions" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Soluções</a>
-            <a href="#howitworks" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Como Funciona</a>
-            <a href="#contact" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Peça um Orçamento</a>
+        <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 shadow-lg">
+          <i data-lucide="store" class="w-12 h-12 text-blue-400 mx-auto mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Lojas e Pequenos Negócios</h3>
+          <p>Controle vendas, despesas e tenha mais clareza nas finanças.</p>
         </div>
-    </header>
-
-    <main>
-        <section id="hero" class="pt-32 pb-20 relative overflow-hidden bg-slate-800">
-            <div class="absolute inset-0 bg-grid-slate-700/40 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
-            <div class="container mx-auto px-6 text-center relative z-10">
-                <img src="/assets/logo.png" alt="Logo JN2M3A DIGITAL" class="h-20 mx-auto mb-6">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight">Modernize seu Negócio em Sergipe com <span class="text-blue-400">Aplicações Web Sob Medida</span></h1>
-                <p class="mt-6 max-w-3xl mx-auto text-lg text-slate-400">Cansado de planilhas e papelada? Criamos sistemas online simples e eficientes para automatizar seu dia a dia.</p>
-                <div class="mt-10">
-                    <a href="#contact" class="bg-blue-600 text-white font-bold py-4 px-10 rounded-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-900/50 text-xl">Transforme sua Gestão Agora</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="for-whom" class="py-20">
-            <div class="container mx-auto px-6">
-                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Soluções Digitais para o Empreendedor Sergipano</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">Nossas ferramentas são perfeitas para quem busca organização e profissionalismo.</p>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-                    <div class="bg-slate-800 p-8 rounded-xl shadow-lg border border-slate-700">
-                        <i data-lucide="user" class="w-12 h-12 text-blue-400 mx-auto mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2 text-white">Autônomos e Liberais</h3>
-                        <p class="text-slate-400">Envie orçamentos e recibos profissionais em segundos, direto do celular.</p>
-                    </div>
-                    <div class="bg-slate-800 p-8 rounded-xl shadow-lg border border-slate-700">
-                        <i data-lucide="store" class="w-12 h-12 text-blue-400 mx-auto mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2 text-white">Pequenos Comerciantes</h3>
-                        <p class="text-slate-400">Controle seu fluxo de caixa e organize suas finanças de forma simples.</p>
-                    </div>
-                    <div class="bg-slate-800 p-8 rounded-xl shadow-lg border border-slate-700">
-                        <i data-lucide="award" class="w-12 h-12 text-blue-400 mx-auto mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2 text-white">MEIs e Empreendedores</h3>
-                        <p class="text-slate-400">Projete uma imagem mais profissional e ganhe a confiança de seus clientes.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="solutions" class="py-20 bg-slate-800/50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">O que Podemos Criar para Você?</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">Transformamos suas necessidades em ferramentas práticas e fáceis de usar.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
-                        <i data-lucide="book-marked" class="w-8 h-8 text-blue-400 mb-3"></i>
-                        <h3 class="font-bold text-lg text-white">Livro Caixa Digital</h3>
-                        <p class="text-slate-400 mt-1">Registre entradas e saídas de forma intuitiva e tenha uma visão clara da saúde financeira do seu negócio.</p>
-                    </div>
-                    <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
-                        <i data-lucide="file-text" class="w-8 h-8 text-blue-400 mb-3"></i>
-                        <h3 class="font-bold text-lg text-white">Gerador de Orçamentos</h3>
-                        <p class="text-slate-400 mt-1">Crie e envie propostas personalizadas com sua logo em PDF. Impressione seus clientes.</p>
-                    </div>
-                    <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
-                        <i data-lucide="receipt" class="w-8 h-8 text-blue-400 mb-3"></i>
-                        <h3 class="font-bold text-lg text-white">Sistema de Recibos Online</h3>
-                        <p class="text-slate-400 mt-1">Emita e envie recibos de pagamento de forma rápida e organizada. Chega de talões de papel.</p>
-                    </div>
-                     <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
-                        <i data-lucide="clipboard-list" class="w-8 h-8 text-blue-400 mb-3"></i>
-                        <h3 class="font-bold text-lg text-white">Controle de Ordens de Serviço</h3>
-                        <p class="text-slate-400 mt-1">Acompanhe o status de cada trabalho, do pedido à entrega, de forma centralizada.</p>
-                    </div>
-                     <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
-                        <i data-lucide="calendar-check" class="w-8 h-8 text-blue-400 mb-3"></i>
-                        <h3 class="font-bold text-lg text-white">Agenda de Clientes/Serviços</h3>
-                        <p class="text-slate-400 mt-1">Organize seus agendamentos e horários para nunca mais perder um compromisso.</p>
-                    </div>
-                     <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
-                        <i data-lucide="plus-circle" class="w-8 h-8 text-blue-400 mb-3"></i>
-                        <h3 class="font-bold text-lg text-white">Sua Ideia Personalizada</h3>
-                        <p class="text-slate-400 mt-1">Tem uma necessidade específica? Nós desenvolvemos a aplicação exata para o seu negócio.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="howitworks" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Nosso Processo é Simples e Transparente</h2>
-                </div>
-                <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center relative">
-                    <div class="absolute top-1/2 left-0 w-full h-0.5 bg-slate-700 hidden md:block"></div>
-                    <div class="relative">
-                        <div class="w-16 h-16 bg-blue-600 text-white flex items-center justify-center rounded-full mx-auto text-2xl font-bold border-4 border-slate-900">1</div>
-                        <h3 class="mt-4 text-xl font-bold text-white">Diagnóstico</h3>
-                        <p class="mt-2 text-slate-400">Conversamos para entender suas necessidades e os desafios do seu dia a dia.</p>
-                    </div>
-                    <div class="relative">
-                        <div class="w-16 h-16 bg-blue-600 text-white flex items-center justify-center rounded-full mx-auto text-2xl font-bold border-4 border-slate-900">2</div>
-                        <h3 class="mt-4 text-xl font-bold text-white">Desenvolvimento</h3>
-                        <p class="mt-2 text-slate-400">Utilizamos a IA do Gemini para criar sua aplicação de forma rápida e eficiente.</p>
-                    </div>
-                    <div class="relative">
-                        <div class="w-16 h-16 bg-blue-600 text-white flex items-center justify-center rounded-full mx-auto text-2xl font-bold border-4 border-slate-900">3</div>
-                        <h3 class="mt-4 text-xl font-bold text-white">Entrega e Suporte</h3>
-                        <p class="mt-2 text-slate-400">Entregamos sua ferramenta pronta para usar e oferecemos todo o suporte necessário.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contact" class="py-20 bg-blue-700">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Vamos Conversar sobre seu Projeto?</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-blue-200">Clique no botão e fale diretamente conosco no WhatsApp. O orçamento é rápido e sem compromisso. Descubra como podemos ajudar seu negócio em Aracaju e toda Sergipe.</p>
-                <div class="mt-10">
-                    <a href="https://wa.me/5579998965081?text=Olá!%20Vi%20o%20site%20da%20JN2M3A%20Digital%20e%20gostaria%20de%20um%20orçamento." target="_blank" class="bg-white text-blue-700 font-bold py-4 px-10 rounded-lg hover:bg-blue-100 transition-all shadow-lg text-xl flex items-center justify-center gap-3 max-w-sm mx-auto">
-                        <i data-lucide="whatsapp" class="w-6 h-6"></i>
-                        <span>Solicitar Orçamento via WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-gray-900 text-slate-400 py-8">
-        <div class="container mx-auto px-6 text-center">
-            <img src="/assets/logo.png" alt="Logo JN2M3A DIGITAL" class="h-10 mx-auto mb-2">
-            <p class="text-sm">Uma marca do Grupo Foto de Marca</p>
-            <p class="text-sm mt-1">(79) 99896-5081 | Atendendo toda a Grande Aracaju e Sergipe</p>
-            <p class="text-xs mt-4 text-slate-500">
-                © 2025 JN2M3A DIGITAL. Desenvolvendo soluções que facilitam o seu dia a dia.
-            </p>
+        <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 shadow-lg">
+          <i data-lucide="award" class="w-12 h-12 text-blue-400 mx-auto mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">MEIs e Startups</h3>
+          <p>Transmita confiança e profissionalismo com sistemas feitos sob medida.</p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        lucide.createIcons();
+  <!-- SOLUÇÕES -->
+  <section id="solutions" class="py-20 bg-slate-800/50">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white">O Que Desenvolvemos</h2>
+      <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">Sistemas simples, práticos e totalmente ajustados à sua realidade.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+          <i data-lucide="book" class="w-8 h-8 text-blue-400 mb-3"></i>
+          <h3 class="font-bold text-lg">Caixa Digital</h3>
+          <p>Registre entradas e saídas e acompanhe suas finanças de forma clara.</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+          <i data-lucide="file-text" class="w-8 h-8 text-blue-400 mb-3"></i>
+          <h3 class="font-bold text-lg">Orçamentos Online</h3>
+          <p>Monte propostas com sua marca e envie direto para o cliente.</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+          <i data-lucide="receipt" class="w-8 h-8 text-blue-400 mb-3"></i>
+          <h3 class="font-bold text-lg">Recibos Digitais</h3>
+          <p>Emita comprovantes em PDF e organize seus pagamentos sem papelada.</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+          <i data-lucide="clipboard-list" class="w-8 h-8 text-blue-400 mb-3"></i>
+          <h3 class="font-bold text-lg">Ordens de Serviço</h3>
+          <p>Gerencie pedidos e acompanhe o status de cada trabalho em um só lugar.</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+          <i data-lucide="calendar" class="w-8 h-8 text-blue-400 mb-3"></i>
+          <h3 class="font-bold text-lg">Agenda Online</h3>
+          <p>Marque horários e receba lembretes para não perder compromissos.</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+          <i data-lucide="plus-circle" class="w-8 h-8 text-blue-400 mb-3"></i>
+          <h3 class="font-bold text-lg">Solução Sob Medida</h3>
+          <p>Tem uma ideia diferente? Criamos a ferramenta do jeito que você precisa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
+  <!-- COMO FUNCIONA -->
+  <section id="howitworks" class="py-20">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white">Como Trabalhamos</h2>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 mt-16 relative">
+        <div class="absolute top-1/2 left-0 w-full h-0.5 bg-slate-700 hidden md:block"></div>
+        <div class="relative">
+          <div class="w-16 h-16 bg-blue-600 text-white flex items-center justify-center rounded-full mx-auto text-2xl font-bold border-4 border-slate-900">1</div>
+          <h3 class="mt-4 text-xl font-bold">Entendimento</h3>
+          <p class="mt-2">Conversamos para identificar necessidades e dificuldades reais do seu negócio.</p>
+        </div>
+        <div class="relative">
+          <div class="w-16 h-16 bg-blue-600 text-white flex items-center justify-center rounded-full mx-auto text-2xl font-bold border-4 border-slate-900">2</div>
+          <h3 class="mt-4 text-xl font-bold">Desenvolvimento</h3>
+          <p class="mt-2">Utilizamos recursos de IA para entregar soluções rápidas, funcionais e bem feitas.</p>
+        </div>
+        <div class="relative">
+          <div class="w-16 h-16 bg-blue-600 text-white flex items-center justify-center rounded-full mx-auto text-2xl font-bold border-4 border-slate-900">3</div>
+          <h3 class="mt-4 text-xl font-bold">Entrega + Suporte</h3>
+          <p class="mt-2">Você recebe a aplicação pronta para uso com suporte contínuo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contact" class="py-20 bg-blue-700">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white">Pronto para Dar o Próximo Passo?</h2>
+      <p class="mt-4 max-w-2xl mx-auto text-lg text-blue-200">Clique no botão e fale agora pelo WhatsApp. O orçamento é simples, rápido e sem compromisso.</p>
+      <div class="mt-10">
+        <a href="https://wa.me/5579998965081?text=Olá!%20Quero%20saber%20mais%20sobre%20as%20soluções%20da%20JN2M3A%20Digital." target="_blank" class="bg-white text-blue-700 font-bold py-4 px-10 rounded-lg hover:bg-blue-100 shadow-lg text-xl flex items-center justify-center gap-3 max-w-sm mx-auto">
+          <i data-lucide="whatsapp" class="w-6 h-6"></i>
+          <span>Solicitar Orçamento via WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-gray-900 text-slate-400 py-8">
+  <div class="container mx-auto px-6 text-center">
+    <img src="/assets/logo.png" alt="JN2M3A DIGITAL" class="h-10 mx-auto mb-2">
+    <p class="text-sm">Parte do Grupo Foto de Marca</p>
+    <p class="text-sm mt-1">(79) 99896-5081 | Atendimento em Aracaju e todo Sergipe</p>
+    <p class="text-xs mt-4 text-slate-500">© 2025 JN2M3A DIGITAL. Soluções digitais para simplificar seu dia a dia.</p>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 </body>
 </html>
